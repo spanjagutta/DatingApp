@@ -46,8 +46,8 @@ export class MemberDetailComponent implements OnInit {
 
   loadMember(){ 
     this.memberService.getMember(this.route.snapshot.paramMap.get('username')!).subscribe(
-      member => {
-      this.member = member;
+      memberVar => {
+      this.member = memberVar;
       this.galleryImages = this.getImages();
     });
   }

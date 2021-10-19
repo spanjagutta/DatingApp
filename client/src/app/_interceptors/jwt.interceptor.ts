@@ -20,7 +20,11 @@ export class JwtInterceptor implements HttpInterceptor {
 
     this.accountService.currentUser$.pipe(take(1)).subscribe(user => currentUser = user);
 
+    console.log("I am in current user condition");
+    console.log(currentUser);
+
     if(currentUser){
+      console.log("I am in current user condition");
       request = request.clone({
         setHeaders: {
           Authorization: `Bearer ${currentUser.token}`
